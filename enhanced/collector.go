@@ -8,7 +8,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/common/log"
 
-	"github.com/percona/rds_exporter/sessions"
+	"github.com/fuze/rds_exporter/sessions"
 )
 
 // Collector collects enhanced RDS metrics by utilizing several scrapers.
@@ -22,8 +22,8 @@ type Collector struct {
 
 // Maximal and minimal metrics update interval.
 const (
-	maxInterval = 10 * time.Second
-	minInterval = 2 * time.Second
+	maxInterval = 1000 * time.Second
+	minInterval = 200 * time.Second
 )
 
 // NewCollector creates new collector and starts scrapers.

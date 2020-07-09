@@ -8,13 +8,13 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/percona/rds_exporter/config"
+	"github.com/fuze/rds_exporter/config"
 )
 
 var (
-	Period = 60 * time.Second
-	Delay  = 600 * time.Second
-	Range  = 600 * time.Second
+	Period = 600 * time.Second
+	Delay  = 6000 * time.Second
+	Range  = 6000 * time.Second
 )
 
 type Scraper struct {

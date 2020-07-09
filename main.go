@@ -9,11 +9,11 @@ import (
 	"github.com/prometheus/common/version"
 	"gopkg.in/alecthomas/kingpin.v2"
 
-	"github.com/percona/rds_exporter/basic"
-	"github.com/percona/rds_exporter/client"
-	"github.com/percona/rds_exporter/config"
-	"github.com/percona/rds_exporter/enhanced"
-	"github.com/percona/rds_exporter/sessions"
+	"github.com/fuze/rds_exporter/basic"
+	"github.com/fuze/rds_exporter/client"
+	"github.com/fuze/rds_exporter/config"
+	"github.com/fuze/rds_exporter/enhanced"
+	"github.com/fuze/rds_exporter/sessions"
 )
 
 //nolint:lll
@@ -23,6 +23,8 @@ var (
 	enhancedMetricsPathF = kingpin.Flag("web.enhanced-telemetry-path", "Path under which to expose exporter's enhanced metrics.").Default("/enhanced").String()
 	configFileF          = kingpin.Flag("config.file", "Path to configuration file.").Default("config.yml").String()
 	logTraceF            = kingpin.Flag("log.trace", "Enable verbose tracing of AWS requests (will log credentials).").Default("false").Bool()
+//	baseIntervalF		 = kingpin.Flag("base.interval", "Delay to fetch base metrics").Default(60).Int()
+//	enhancedIntervalF	 = kingpin.Flag("enhanced.interval", "Delay to fetch enhanced metrics").Default(100).Int()
 )
 
 func main() {

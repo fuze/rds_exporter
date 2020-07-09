@@ -1,0 +1,13 @@
+FROM golang:1.14-alpine as builder
+RUN apk update && apk add gcc make git && mkdir /build 
+RUN go get github.com/fuze/rds_exporter
+# ADD . /go/src/github.com/percona/rds_exporter
+WORKDIR /build 
+RUN cd /go/src/github.com/fuze/rds_exporter && make build
+COPY /go/src/github.com/fuze/rds_exporter/rds_exporter /build
+FROM alpine
+RUN adduser -S -D -H -h /app appuser
+USER appuser
+COPY --from=builder /build/rds_exporter /app/
+WORKDIR /app
+CMD ["./rds_exporter"]

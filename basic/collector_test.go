@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/percona/rds_exporter/client"
-	"github.com/percona/rds_exporter/config"
-	"github.com/percona/rds_exporter/sessions"
+	"github.com/fuze/rds_exporter/client"
+	"github.com/fuze/rds_exporter/config"
+	"github.com/fuze/rds_exporter/sessions"
 )
 
 func TestCollector(t *testing.T) {
